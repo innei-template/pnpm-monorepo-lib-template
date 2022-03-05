@@ -9,6 +9,6 @@
     "@pnpm-template/core": "workspace:0.0.0"
   },
   "devDependencies": {
-    "vite": ""
+    "vite": "2.7.13"
   }
 }

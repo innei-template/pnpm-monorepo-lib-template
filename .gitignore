@@ -129,3 +129,4 @@ ctag
 /packages/*/esm
 /packages/*/lib
 /packages/*/types
+/docs/dist
