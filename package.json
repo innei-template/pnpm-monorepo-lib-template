@@ -18,8 +18,9 @@
     ]
   },
   "scripts": {
-    "prepare": "husky install && npm run build:all",
+    "prepare": "husky install && npm run package:all",
     "build:all": "pnpm run build -r",
+    "package:all": "pnpm run package -r",
     "docs": "pnpm run dev -C docs"
   },
   "devDependencies": {
