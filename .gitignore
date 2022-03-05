@@ -125,4 +125,7 @@ ctag
 /esm
 /types
 
-example/dist
+/packages/*/dist
+/packages/*/esm
+/packages/*/lib
+/packages/*/types

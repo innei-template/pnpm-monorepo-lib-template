@@ -1,0 +1,57 @@
+{
+  "name": "@pnpm-template/core",
+  "version": "0.0.0",
+  "author": "Innei",
+  "license": "MIT",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "types/src/index.d.ts",
+  "unpkg": "dist/index.umd.min.js",
+  "exports": {
+    ".": {
+      "types": "./types/src/index.d.ts",
+      "require": "./dist/index.cjs.js",
+      "import": "./dist/index.esm.js"
+    },
+    "./utils": {
+      "require": "./lib/src/utils/index.js",
+      "import": "./esm/src/utils/index.js",
+      "types": "./types/src/utils/index.d.ts"
+    }
+  },
+  "bump": {
+    "before": [
+      "git pull --rebase",
+      "pnpm i",
+      "npm run package"
+    ],
+    "after": [
+      "npm publish --access=public"
+    ]
+  },
+  "engines": {
+    "pnpm": ">=6"
+  },
+  "scripts": {
+    "prebuild": "rm -rf lib && rm -rf esm",
+    "build": "tsc --build tsconfig.build.json && tsc --build tsconfig.cjs.json",
+    "postbuild": "tsconfig-replace-paths -p tsconfig.build.json && tsconfig-replace-paths -p tsconfig.cjs.json && npm run types",
+    "types": "rm -rf types && tsc --build tsconfig.types.json && tsconfig-replace-paths -p tsconfig.types.json",
+    "package": "NODE_ENV=production npm run build && rollup -c ",
+    "prepackage": "rm -rf build",
+    "release": "vv"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "21.0.2",
+    "@rollup/plugin-node-resolve": "13.1.3",
+    "@rollup/plugin-typescript": "8.3.1",
+    "@types/lodash": "4.14.178",
+    "@types/node": "16.11.25",
+    "lodash": "4.17.21",
+    "rollup": "2.67.3",
+    "rollup-plugin-peer-deps-external": "2.2.4",
+    "rollup-plugin-terser": "7.0.2",
+    "tsconfig-replace-paths": "0.0.11"
+  },
+  "dependencies": {}
+}

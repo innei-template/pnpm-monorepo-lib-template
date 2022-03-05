@@ -1,0 +1,24 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "declaration": true,
+    "outDir": "./esm",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "jsx": "react",
+    "paths": {
+      "~/*": [
+        "src/*"
+      ],
+      "~": [
+        "src/"
+      ]
+    }
+  },
+  "include": [
+    "src/*"
+  ],
+  "exclude": [
+    "__tests__/*",
+  ]
+}

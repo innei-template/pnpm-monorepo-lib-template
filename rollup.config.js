@@ -1,14 +1,11 @@
 //@ts-check
-import typescript from '@rollup/plugin-typescript'
-import { terser } from 'rollup-plugin-terser'
-
+import commonjs from '@rollup/plugin-commonjs'
 // import esbuild from 'rollup-plugin-esbuild'
 import { nodeResolve } from '@rollup/plugin-node-resolve'
-import commonjs from '@rollup/plugin-commonjs'
-
+import typescript from '@rollup/plugin-typescript'
 // import { babel } from '@rollup/plugin-babel'
-
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
+import { terser } from 'rollup-plugin-terser'
 
 const packageJson = require('./package.json')
 
@@ -75,7 +72,7 @@ const config = [
     plugins: [
       nodeResolve(),
       commonjs({ include: 'node_modules/**' }),
-      typescript({ tsconfig: './src/tsconfig.json', declaration: false }),
+      typescript({ tsconfig: './tsconfig.json', declaration: false }),
       // esbuild({
       //   include: /\.[jt]sx?$/,
       //   exclude: /node_modules/,
