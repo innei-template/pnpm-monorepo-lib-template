@@ -1,36 +1,9 @@
-# Rollup Typescript library template
+# Rollup Monorepo Typescript library template
 
 Please use pnpm do this.
 
 ```sh
 pnpm i
-```
-
-# Usage
-
-### Package
-
-Bundle your source code via tsc, rollup.
-
-```
-npm run package
-```
-
-### Dev
-
-Start dev mode by Vite.
-
-```
-npm run dev
-```
-
-### Delopy
-
-Delopy example to GitHub Pages.
-
-```
-npm run delopy
-npm run publish
 ```
 
 # Additional
