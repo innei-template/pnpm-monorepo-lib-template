@@ -24,7 +24,7 @@ async function main() {
   }
 
   if (shouldBuild) {
-    const stream = spawn(`turbo`, ['run', 'build'])
+    const stream = spawn(`turbo`, ['run', 'package'])
     stream.stdout.on('data', (data) => {
       console.log(data.toString())
     })
