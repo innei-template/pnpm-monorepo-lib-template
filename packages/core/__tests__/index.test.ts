@@ -1,5 +1,7 @@
 import { describe, expect, it, test } from 'vitest'
-import { getTime } from '..'
+
+import { getTime } from '../src'
+
 describe('test', () => {
   it('should be define', () => {
     expect(test).toBeDefined()

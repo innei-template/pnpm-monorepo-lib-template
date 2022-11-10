@@ -25,9 +25,8 @@
       "pnpm i",
       "npm run package"
     ],
-    "after": [
-      "npm publish --access=public"
-    ]
+    "after": [],
+    "publish": true
   },
   "engines": {
     "pnpm": ">=6"
@@ -35,24 +34,17 @@
   "scripts": {
     "prebuild": "rm -rf lib && rm -rf esm",
     "build": "tsc --build tsconfig.build.json && tsc --build tsconfig.cjs.json",
-    "postbuild": "tsconfig-replace-paths -p tsconfig.build.json && tsconfig-replace-paths -p tsconfig.cjs.json && npm run types",
-    "types": "rm -rf types && tsc --build tsconfig.types.json && tsconfig-replace-paths -p tsconfig.types.json",
+    "postbuild": "tsc-alias -p tsconfig.build.json && tsc-alias -p tsconfig.cjs.json && npm run types",
+    "types": "rm -rf types && tsc --build tsconfig.types.json && tsc-alias -p tsconfig.types.json",
     "package": "NODE_ENV=production npm run build && rollup -c ",
     "prepackage": "rm -rf build",
     "release": "vv",
     "test": "vitest"
   },
   "devDependencies": {
-    "@rollup/plugin-commonjs": "21.0.2",
-    "@rollup/plugin-node-resolve": "13.1.3",
-    "@rollup/plugin-typescript": "8.3.1",
-    "@types/lodash": "4.14.178",
-    "@types/node": "16.11.25",
+    "@types/lodash": "4.14.188",
+    "@types/node": "18.11.9",
     "lodash": "4.17.21",
-    "rollup": "2.67.3",
-    "rollup-plugin-peer-deps-external": "2.2.4",
-    "rollup-plugin-terser": "7.0.2",
-    "tsconfig-replace-paths": "0.0.11",
-    "vitest": "0.5.9"
+    "vitest": "0.25.1"
   }
 }

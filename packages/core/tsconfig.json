@@ -16,7 +16,7 @@
     }
   },
   "include": [
-    "src/*"
+    "src/*",
   ],
   "exclude": [
     "__tests__/*",
