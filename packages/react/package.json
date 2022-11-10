@@ -17,8 +17,5 @@
   },
   "dependencies": {
     "@pnpm-template/core": "workspace:*"
-  },
-  "devDependencies": {
-    "vitest": "0.25.1"
   }
 }

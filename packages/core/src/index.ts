@@ -1,4 +1,5 @@
 import { getTime } from '~/utils'
+
 export const date = getTime()
 const test = () => {
   console.log('hello, rollup')

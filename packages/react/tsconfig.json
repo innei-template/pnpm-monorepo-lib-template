@@ -7,18 +7,10 @@
     "rootDir": ".",
     "jsx": "react",
     "paths": {
-      "~/*": [
-        "src/*"
-      ],
-      "~": [
-        "src/"
-      ]
+      "~/*": ["src/*"],
+      "~": ["src/"]
     }
   },
-  "include": [
-    "src/*"
-  ],
-  "exclude": [
-    "__tests__/*",
-  ]
+  "include": ["src/*"],
+  "exclude": ["__tests__/*"]
 }

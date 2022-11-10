@@ -18,15 +18,16 @@
     ]
   },
   "scripts": {
-    "prepare": "husky install && npm run package:all",
-    "build:all": "pnpm -r run build ",
-    "package:all": "pnpm -r run package",
-    "test:all": "pnpm -r run test",
-    "docs": "pnpm -C docs run dev "
+    "prepare": "husky install && node scripts/should-build-pre.mjs",
+    "build": "turbo run package",
+    "test": "turbo run test",
+    "docs": "pnpm -C docs run dev ",
+    "lint": "eslint --cache --ext .js,.jsx,.ts,.tsx,.vue packages/** --fix",
+    "format": "prettier --ignore-path ./.prettierignore --write packages/**"
   },
   "devDependencies": {
-    "@innei/eslint-config-react-ts": "latest",
     "@innei/bump-version": "latest",
+    "@innei/eslint-config-react-ts": "latest",
     "@innei/prettier": "latest",
     "@rollup/plugin-commonjs": "23.0.2",
     "@rollup/plugin-typescript": "9.0.2",
@@ -40,6 +41,7 @@
     "rollup-plugin-peer-deps-external": "2.2.4",
     "rollup-plugin-terser": "7.0.2",
     "tsc-alias": "1.7.1",
+    "turbo": "^1.6.3",
     "typescript": "4.8.4",
     "vite": "3.2.3",
     "vite-tsconfig-paths": "3.5.2",
