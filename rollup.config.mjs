@@ -1,9 +1,8 @@
 // @ts-check
 
 import fs from 'fs'
-import esbuild from 'rollup-plugin-esbuild'
+import esbuild, { minify } from 'rollup-plugin-esbuild'
 import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import { terser } from 'rollup-plugin-terser'
 
 import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
@@ -47,7 +46,7 @@ const config = [
         format: 'umd',
         sourcemap: true,
         name: umdName,
-        plugins: [terser()],
+        plugins: [minify()],
       },
       {
         file: `${dir}/index.cjs.js`,
@@ -58,7 +57,7 @@ const config = [
         file: `${dir}/index.cjs.min.js`,
         format: 'cjs',
         sourcemap: true,
-        plugins: [terser()],
+        plugins: [minify()],
       },
       {
         file: `${dir}/index.esm.js`,
@@ -69,7 +68,7 @@ const config = [
         file: `${dir}/index.esm.min.js`,
         format: 'es',
         sourcemap: true,
-        plugins: [terser()],
+        plugins: [minify()],
       },
     ],
     plugins: [
