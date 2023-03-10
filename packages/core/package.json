@@ -2,21 +2,24 @@
   "name": "@pnpm-template/core",
   "version": "0.0.0",
   "author": "Innei",
+  "type": "module",
   "license": "MIT",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "types/src/index.d.ts",
-  "unpkg": "dist/index.umd.min.js",
-  "exports": {
-    ".": {
-      "types": "./types/src/index.d.ts",
-      "require": "./dist/index.cjs.js",
-      "import": "./dist/index.esm.js"
-    },
-    "./utils": {
-      "require": "./lib/src/utils/index.js",
-      "import": "./esm/src/utils/index.js",
-      "types": "./types/src/utils/index.d.ts"
+  "main": "src/index.ts",
+  "publishConfig": {
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
+    "types": "types/src/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./types/src/index.d.ts",
+        "require": "./dist/index.cjs.js",
+        "import": "./dist/index.esm.js"
+      },
+      "./utils": {
+        "require": "./lib/src/utils/index.js",
+        "import": "./esm/src/utils/index.js",
+        "types": "./types/src/utils/index.d.ts"
+      }
     }
   },
   "bump": {
@@ -29,7 +32,7 @@
     "publish": true
   },
   "engines": {
-    "pnpm": ">=6"
+    "pnpm": ">=7"
   },
   "scripts": {
     "prebuild": "rm -rf lib && rm -rf esm",

@@ -2,10 +2,25 @@
   "name": "@pnpm-template/react",
   "version": "0.0.0",
   "description": "",
-  "main": "dist/index.cjs.js",
-  "module": "dist/index.esm.js",
-  "types": "types/index.d.ts",
-  "unpkg": "dist/index.umd.min.js",
+  "main": "src/index.ts",
+  "type": "module",
+  "publishConfig": {
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
+    "types": "types/src/index.d.ts",
+    "exports": {
+      ".": {
+        "types": "./types/src/index.d.ts",
+        "require": "./dist/index.cjs.js",
+        "import": "./dist/index.esm.js"
+      },
+      "./utils": {
+        "require": "./lib/src/utils/index.js",
+        "import": "./esm/src/utils/index.js",
+        "types": "./types/src/utils/index.d.ts"
+      }
+    }
+  },
   "scripts": {
     "prebuild": "rm -rf lib && rm -rf esm",
     "build": "tsc --build tsconfig.build.json && tsc --build tsconfig.cjs.json",

@@ -11,8 +11,6 @@ const packageJson = JSON.parse(
   fs.readFileSync('./package.json', { encoding: 'utf-8' }),
 )
 
-const umdName = packageJson.name
-
 const globals = {
   ...packageJson.devDependencies,
 }
@@ -35,19 +33,6 @@ const config = [
     ],
 
     output: [
-      {
-        file: `${dir}/index.umd.js`,
-        format: 'umd',
-        sourcemap: true,
-        name: umdName,
-      },
-      {
-        file: `${dir}/index.umd.min.js`,
-        format: 'umd',
-        sourcemap: true,
-        name: umdName,
-        plugins: [minify()],
-      },
       {
         file: `${dir}/index.cjs.js`,
         format: 'cjs',

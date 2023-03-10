@@ -1,4 +1,4 @@
-import { getTime } from '~/utils'
+import { getTime } from './utils'
 
 export const date = getTime()
 const test = () => {

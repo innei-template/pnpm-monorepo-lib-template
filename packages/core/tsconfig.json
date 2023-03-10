@@ -6,11 +6,12 @@
     "baseUrl": ".",
     "rootDir": ".",
     "jsx": "react",
-    "paths": {
-      "~/*": ["src/*"],
-      "~": ["src/"]
-    }
+    "paths": {}
   },
-  "include": ["src/*"],
-  "exclude": ["__tests__/*"]
+  "include": [
+    "src/*"
+  ],
+  "exclude": [
+    "__tests__/*"
+  ]
 }

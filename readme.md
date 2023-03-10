@@ -1,6 +1,6 @@
 # Rollup Monorepo Typescript library template
 
-Please use pnpm@7 run this.
+Please use pnpm@^7 run this.
 
 ```sh
 pnpm i
