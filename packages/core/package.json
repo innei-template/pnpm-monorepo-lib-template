@@ -41,8 +41,7 @@
     "types": "rm -rf types && tsc --build tsconfig.types.json && tsc-alias -p tsconfig.types.json",
     "package": "NODE_ENV=production npm run build && rollup -c ",
     "prepackage": "rm -rf build",
-    "release": "vv",
-    "test": "vitest"
+    "release": "vv"
   },
   "devDependencies": {
     "@types/lodash": "4.14.188",

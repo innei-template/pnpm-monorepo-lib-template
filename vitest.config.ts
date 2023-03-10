@@ -4,10 +4,9 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    include: ['packages/**/*.(spec|test).ts'],
-    exclude: ['node_modules/**'],
+    include: ['tests/**/*.(spec|test).ts'],
   },
-  base: '.',
+
   plugins: [
     tsconfigPaths({
       projects: [resolve('./tsconfig.json')],

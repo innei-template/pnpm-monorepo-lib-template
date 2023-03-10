@@ -1,6 +1,6 @@
 import { describe, expect, it, test } from 'vitest'
 
-import { getTime } from '../src'
+import { getTime } from '@pnpm-template/core'
 
 describe('test', () => {
   it('should be define', () => {
